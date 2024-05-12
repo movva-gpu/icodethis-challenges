@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <label id="cross-uncheck" for="cross-check">Wait, come back, please!</label>
+
+    <main id="main">
+        <label id="cross" for="cross-check">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#333">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+        </label>
+        <input type="checkbox" id="cross-check" hidden aria-hidden="true">
+        <h1>What did you think?</h1>
+        <form>
+            <div class="page-wrapper">
+                <div class="part-1">
+                    <div class="happiness">
+                        <div class="happiness-wrapper">
+                            <label class="happiness-icon" for="very-bad">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="92px" viewBox="0 -960 960 960"
+                                    width="92px" fill="#000">
+                                    <path
+                                        d="M480-74.02q-84.2 0-158.39-31.86-74.2-31.86-129.03-87.2-54.84-55.33-86.7-129.38-31.86-74.04-31.86-157.51 0-84.46 31.86-158.54t86.73-128.93q54.87-54.85 129.03-86.81Q395.8-886.22 480-886.22q84.2 0 157.86 31.95 73.65 31.95 129.03 86.76 55.37 54.82 87.35 128.91 31.98 74.08 31.98 158.6 0 83.5-31.97 157.57-31.96 74.08-87.31 129.38-55.35 55.31-129.05 87.17Q564.2-74.02 480-74.02Zm0-68.13q140.28 0 239.07-98.74 98.78-98.74 98.78-239.07 0-141.32-98.78-239.61-98.79-98.28-238.95-98.28-141.16 0-239.57 98.24-98.4 98.24-98.4 239.57 0 140.32 98.37 239.11Q338.9-142.15 480-142.15Zm138.57-349.42q23.47 0 39.45-15.97Q674-523.52 674-547q0-13.09-5.38-24.04-5.38-10.96-15.14-19.44l8.32-4.04q8.24-3.9 10.36-12.09 2.12-8.19-2.88-16.51-5-8.31-13.18-10.93-8.19-2.62-16.49 2.38l-90.28 52.76q-8.31 5.08-10.63 14-2.33 8.91 4.87 21.58 2.76 5.67 9.14 7.1 6.38 1.43 12.14-1.57l-.24.23q3.48 20 18.65 33 15.16 13 35.31 13Zm-277.14 0q20.15 0 35.32-13 15.18-13 18.89-33l-.49-.23q5.76 3 12.17.8t12.07-12.23q4.24-8.32 2-16.5t-10.48-13.18l-91.5-52.75q-7.5-4.25-16.09-2.51-8.6 1.74-12.6 9.96-5 8.22-2.38 16.95 2.62 8.74 10.86 12.74l7.56 4.04q-10 8.48-15.38 19.44Q286-560.09 286-547q0 23.48 15.98 39.46 15.98 15.97 39.45 15.97Zm138.47 52.42q-69.35 0-121.24 46.33-51.9 46.34-77.18 112.82h397.04q-26.04-65.72-77.66-112.43-51.62-46.72-120.96-46.72ZM480-480Z" />
+                                </svg>
+                            </label>
+                            <input type="radio" name="happiness" id="very-bad" aria-hidden="true">
+                            <label for="very-bad">Very Bad</label>
+                        </div>
+                        <div class="happiness-wrapper">
+                            <label class="happiness-icon" for="bad">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="92px" viewBox="0 -960 960 960"
+                                    width="92px" fill="#000">
+                                    <path
+                                        d="m347-534 27 27.76q7 7.24 17 6.74t17-8.5q6-7 6-16t-7-16l-29-30 29-29q6.76-7 6.88-16 .12-9-5.88-16-7-8-17-8.5t-18 7.5l-26 26-32.76-28q-8-6.76-17.62-5.88-9.62.88-16.38 8.64Q274-624 274.12-615q.12 9 6.88 16l30 29-29.76 29.76Q274-533 274-524q0 9 7 16.76 6 8 16.12 8.5 10.12.5 18.12-6.26L347-534Zm266 0 33 29.76q8 7 17.5 5.62T680-508q6-7 6-16t-7-16l-29-30 29-29q6.76-7 6.88-16 .12-9-6.64-17-6.24-8-16.24-8.5-10-.5-18 5.26L613-606l-26.76-26q-7.24-8-17.24-7.5-10 .5-16.76 8.26Q546-624 546.12-615q.12 9 6.88 16l29 29-28.76 29.76Q546-533 546-524q0 9 6 16 7 8 17 8.5t18-7.5l26-27ZM480-74.02q-84.2 0-158.27-31.86-74.08-31.86-129.03-86.82-54.96-54.95-86.82-129.03Q74.02-395.8 74.02-480q0-84.2 31.86-157.89 31.86-73.7 86.82-128.91 54.95-55.22 129.03-87.32 74.07-32.1 158.27-32.1 84.2 0 157.89 32.1 73.7 32.1 128.91 87.32 55.22 55.21 87.32 128.91 32.1 73.69 32.1 157.89 0 84.2-32.1 158.27-32.1 74.08-87.32 129.03-55.21 54.96-128.91 86.82Q564.2-74.02 480-74.02ZM480-480Zm0 337.85q140.28 0 239.07-98.4 98.78-98.41 98.78-239.45 0-140.28-98.78-239.07-98.79-98.78-239.07-98.78-141.04 0-239.45 98.78-98.4 98.79-98.4 239.07 0 141.04 98.4 239.45 98.41 98.4 239.45 98.4ZM480-417q-56.76 0-104.64 27.88t-78.16 74.88q-7 12.24 0 23.24 7 11 20.23 11h323.9q13 0 20.12-11 7.12-11 1.12-23.24Q632.04-362 583.9-389.5 535.76-417 480-417Z" />
+                                </svg>
+                            </label>
+                            <input type="radio" name="happiness" id="bad" aria-hidden="true">
+                            <label for="bad">Bad</label>
+                        </div>
+                        <div class="happiness-wrapper">
+                            <label class="happiness-icon" for="mid">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="92px" viewBox="0 -960 960 960"
+                                    width="92px" fill="#000">
+                                    <path
+                                        d="M480-417q-54.19 0-101.78 23.17-47.58 23.18-77.31 68.2-8.71 13.48-3 27.05Q303.62-285 317.15-285q8.26 0 14.97-4.36 6.71-4.36 11.18-10.6 23.55-33.41 60.11-49.41 36.55-16 77.41-16t77.1 17q36.25 17 59.78 49.41 5.47 6.24 11.57 10.1 6.09 3.86 14.82 3.86 13.48 0 20.21-12.72 6.74-12.71-1.73-24.19-29.24-46.29-78.45-70.69Q534.91-417 480-417Zm144.57-114.57q22.97 0 39.2-16.22Q680-564.02 680-587t-16.23-39.21q-16.23-16.22-39.2-16.22-22.98 0-39.09 16.14-16.11 16.14-16.11 39.21 0 23.06 16.1 39.29 16.1 16.22 39.1 16.22Zm-289.14 0q22.98 0 39.09-16.14 16.11-16.14 16.11-39.21 0-23.06-16.1-39.29-16.1-16.22-39.1-16.22-22.97 0-39.2 16.22Q280-609.98 280-587t16.23 39.21q16.23 16.22 39.2 16.22ZM480.01-74.02q-84.21 0-158.28-31.86-74.08-31.86-129.03-86.82-54.96-54.95-86.82-129.02-31.86-74.06-31.86-158.27 0-84.21 31.86-158.28 31.86-74.08 86.78-129.05 54.92-54.97 129-86.93 74.08-31.97 158.31-31.97t158.33 31.95q74.1 31.95 129.06 86.88 54.95 54.94 86.9 129.05 31.96 74.1 31.96 158.36 0 84.24-31.97 158.31-31.96 74.08-86.93 129-54.97 54.93-129.04 86.79-74.06 31.86-158.27 31.86ZM480-480Zm0 337.85q141.42 0 239.63-98.22 98.22-98.21 98.22-239.63 0-141.42-98.22-239.63-98.21-98.22-239.63-98.22-141.42 0-239.63 98.22-98.22 98.21-98.22 239.63 0 141.42 98.22 239.63 98.21 98.22 239.63 98.22Z" />
+                                </svg>
+                            </label>
+                            <input type="radio" name="happiness" id="mid" aria-hidden="true">
+                            <label for="mid">Mid</label>
+                        </div>
+                        <div class="happiness-wrapper">
+                            <label class="happiness-icon" for="good">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="92px" viewBox="0 -960 960 960"
+                                    width="92px" fill="#000">
+                                    <path
+                                        d="M479.88-261q55.15 0 104.3-24.4t78.39-70.69q8.47-11.48 1.73-24.19Q657.57-393 644.09-393q-8.63 0-14.77 3.86-6.15 3.86-11.62 10.1-23.55 32.41-59.93 49.41-36.37 17-76.85 17-40.49 0-77.29-16-36.8-16-60.33-49.41-4.47-6.24-11.26-10.6-6.79-4.36-14.98-4.36-13.33 0-19.1 13.58-5.76 13.57 2.95 27.05 29.73 45.02 77.31 68.2Q425.81-261 479.88-261Zm144.69-270.57q22.97 0 39.2-16.22Q680-564.02 680-587t-16.23-39.21q-16.23-16.22-39.32-16.22-22.86 0-38.97 16.2t-16.11 39.2q0 23.01 16.09 39.24 16.09 16.22 39.11 16.22Zm-289.02 0q22.86 0 38.97-16.2t16.11-39.2q0-23.01-16.09-39.24-16.09-16.22-39.11-16.22-22.97 0-39.2 16.22Q280-609.98 280-587t16.23 39.21q16.23 16.22 39.32 16.22ZM480.03-74.02q-84.23 0-158.3-31.86-74.08-31.86-129.03-86.82-54.96-54.95-86.82-129-31.86-74.04-31.86-158.27t31.86-158.3q31.86-74.08 86.78-129.05 54.92-54.97 128.98-86.93 74.06-31.97 158.31-31.97t158.35 31.95q74.1 31.95 129.06 86.88 54.95 54.94 86.9 129.03 31.96 74.08 31.96 158.36 0 84.26-31.97 158.33-31.96 74.08-86.93 129-54.97 54.93-129.02 86.79-74.04 31.86-158.27 31.86ZM480-480Zm0 337.85q141.42 0 239.63-98.22 98.22-98.21 98.22-239.63 0-141.42-98.22-239.63-98.21-98.22-239.63-98.22-141.42 0-239.63 98.22-98.22 98.21-98.22 239.63 0 141.42 98.22 239.63 98.21 98.22 239.63 98.22Z" />
+                                </svg>
+                            </label>
+                            <input type="radio" name="happiness" id="good" aria-hidden="true">
+                            <label for="good">Good</label>
+                        </div>
+                        <div class="happiness-wrapper">
+                            <label class="happiness-icon" for="very-good">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="92px" viewBox="0 -960 960 960"
+                                    width="92px" fill="#000">
+                                    <path
+                                        d="M479.5-261q58.04 0 106.87-26.48 48.83-26.48 78.83-73.59 6-11.84-.99-22.96-6.98-11.12-20.7-11.12H316.4q-14.14 0-20.87 11t-.49 22.84q29.76 47.13 78.62 73.72Q422.52-261 479.5-261ZM347-576.33l26.76 26.53q7.64 8.23 18.66 8.23 11.01 0 19.25-8.11 8.24-8.12 8.24-18.84t-8.24-18.96l-40.56-40.8q-10.09-10.2-23.94-10.2-13.84 0-24.04 10.2l-40.8 40.8q-8.24 7.99-8.12 18.83.12 10.85 8.36 19.08 8.23 8.24 18.95 8.12 10.72-.12 18.96-8.35L347-576.33Zm267.11 0 26.65 26.53q7.72 8.23 18.72 8.23t18.95-8.11q8.24-7.76 8.24-18.78 0-11.02-8.24-19.26l-40.56-40.56q-10.09-10.2-23.94-10.2-13.84 0-24.04 10.2l-40.32 40.8q-8.24 7.96-8.24 18.84 0 10.88 8.24 18.84 7.87 8.23 18.77 8.23 10.9 0 19.14-8.23l26.63-26.53ZM480.03-74.02q-84.23 0-158.3-31.86-74.08-31.86-129.03-86.82-54.96-54.95-86.82-129-31.86-74.04-31.86-158.27t31.86-158.3q31.86-74.08 86.78-129.05 54.92-54.97 128.98-86.93 74.06-31.97 158.31-31.97t158.35 31.95q74.1 31.95 129.06 86.88 54.95 54.94 86.9 129.03 31.96 74.08 31.96 158.36 0 84.26-31.97 158.33-31.96 74.08-86.93 129-54.97 54.93-129.02 86.79-74.04 31.86-158.27 31.86ZM480-480Zm0 337.85q141.42 0 239.63-98.22 98.22-98.21 98.22-239.63 0-141.42-98.22-239.63-98.21-98.22-239.63-98.22-141.42 0-239.63 98.22-98.22 98.21-98.22 239.63 0 141.42 98.22 239.63 98.21 98.22 239.63 98.22Z" />
+                                </svg>
+                            </label>
+                            <input type="radio" name="happiness" id="very-good" aria-hidden="true">
+                            <label for="very-good">Very good</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="part-2">
+                    <div class="use-wrapper">
+                        <label for="useful">This was very useful</label>
+                        <input type="radio" name="use" id="useful">
+                    </div>
+                    <div class="use-wrapper">
+                        <label for="wrong">Something went wrong</label>
+                        <input type="radio" name="use" id="wrong">
+                    </div>
+                    <div class="use-wrapper">
+                        <label for="useless">This is not useful</label>
+                        <input type="radio" name="use" id="useless">
+                    </div>
+                    <div class="use-wrapper">
+                        <label for="like">Shitty af</label>
+                        <input type="radio" name="use" id="like">
+                    </div>
+                    <div class="comments-wrapper">
+                        <label for="comments">
+                            <h2>Have any comments? Write them below!</h2>
+                        </label>
+                        <textarea name="comments" id="comments" cols="30" rows="5"></textarea>
+                    </div>
+                    <p>
+                        <small>
+                            By submitting this form, you agree to give us your soul, for free and forever, even after
+                            the death of the universe itself.
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <button type="button" id="previous-cancel" class="secondary">
+                    <label class="cancel" for="cross-check">Cancel</label>
+                    <span class="previous">Previous</span>
+                </button>
+                <button type="button" id="next-submit" class="primary">
+                    <span class="next">Next</span>
+                    <span class="submit">Submit</span>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- https://github.com/pengxiaotian/confetti-js -->
+    <script>
+        var Progress = (function () { function Progress(duration, isLoop) { if (isLoop === void 0) { isLoop = true } this.timestamp = 0; this.duration = 0; this.progress = 0; this.delta = 0; this.isLoop = false; this.duration = duration; this.isLoop = isLoop } Progress.prototype.reset = function () { this.timestamp = 0 }; Progress.prototype.start = function (now) { this.timestamp = now }; Progress.prototype.tick = function (now) { if (this.timestamp) { this.delta = now - this.timestamp; this.progress = Math.min(this.delta / this.duration, 1); if (this.progress >= 1 && this.isLoop) { this.start(now) } return this.progress } return 0 }; return Progress }()); var Confetti = (function () { function Confetti(param) { this.width = 100; this.height = 100; this.length = 100; this.yRange = 100; this.rotationRange = 10; this.speedRange = 10; this.sprites = []; this.canvas = document.createElement('canvas'); this.ctx = this.canvas.getContext('2d'); this.setOptions(param); this.render = this.render.bind(this); this.build(); this.canvas.style.cssText = ['display: block', 'position: absolute', 'top: 0', 'left: 0', 'pointer-events: none'].join(';'); this.parent.append(this.canvas); this.progress = new Progress(param.duration || Confetti.DURATION, !!param.isLoop); this.start(); requestAnimationFrame(this.render) } Confetti.prototype.build = function () { for (var i = 0; i < this.length; i += 1) { var canvas = document.createElement('canvas'); var ctx = canvas.getContext('2d'); canvas.width = Confetti.SPRITE_WIDTH; canvas.height = Confetti.SPRITE_HEIGHT; var position = { initX: Math.random() * this.width, initY: -canvas.height - Math.random() * this.yRange }; var rotation = this.rotationRange / 2 - Math.random() * this.rotationRange; var speed = this.speedRange / 2 + Math.random() * (this.speedRange / 2); ctx.save(); ctx.fillStyle = Confetti.COLORS[Math.random() * Confetti.COLORS.length | 0]; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.restore(); this.sprites.push({ canvas: canvas, position: position, rotation: rotation, speed: speed }) } }; Confetti.prototype.render = function (now) { if (!this.canvas || !this.ctx) { return } var progress = this.progress.tick(now); this.canvas.width = this.width; this.canvas.height = this.height; for (var i = 0; i < this.length; i += 1) { this.ctx.save(); var _a = this.sprites[i], position = _a.position, rotation = _a.rotation, speed = _a.speed; this.ctx.translate(position.initX + rotation * Confetti.ROTATION_RATE * progress, position.initY + progress * (this.height + this.yRange)); this.ctx.rotate(rotation); this.ctx.drawImage(this.sprites[i].canvas, -Confetti.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * speed)) / 2, -Confetti.SPRITE_HEIGHT / 2, Confetti.SPRITE_WIDTH * Math.abs(Math.sin(progress * Math.PI * 2 * speed)), Confetti.SPRITE_HEIGHT); this.ctx.restore() } requestAnimationFrame(this.render) }; Confetti.prototype.setOptions = function (param) { this.parent = param.el || document.body; this.width = param.width || this.parent.offsetWidth; this.height = param.height || this.parent.offsetHeight; this.width += param.offsetWidth || 0; this.height += param.offsetHeight || 0; this.length = param.length || Confetti.PAPER_LENGTH; this.yRange = this.height * 2; if (this.progress) { this.progress.isLoop = !!param.isLoop; this.progress.duration = param.duration || Confetti.DURATION } }; Confetti.prototype.start = function () { this.progress.start(performance.now()) }; Confetti.prototype.stop = function () { this.progress.reset() }; Confetti.prototype.destroy = function () { if (this.canvas) { this.canvas.remove(); this.canvas = null; this.ctx = null } }; Confetti.ROTATION_RATE = 50; Confetti.SPRITE_WIDTH = 9; Confetti.SPRITE_HEIGHT = 16; Confetti.PAPER_LENGTH = 100; Confetti.DURATION = 6000; Confetti.COLORS = ['#EF5350', '#EC407A', '#AB47BC', '#7E57C2', '#5C6BC0', '#42A5F5', '#29B6F6', '#26C6DA', '#26A69A', '#66BB6A', '#9CCC65', '#D4E157', '#FFEE58', '#FFCA28', '#FFA726', '#FF7043', '#8D6E63', '#BDBDBD', '#78909C']; return Confetti }());
+    </script>
+</body>
+
+</html>

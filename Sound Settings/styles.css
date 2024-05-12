@@ -1,0 +1,362 @@
+@property --_value {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@layer reset, layout, components, additional;
+
+:root {
+    --color-bg-1: #1d0a35;
+    --color-bg-2: #120924;
+    --color-popup-bg: #ece2f8;
+
+    --sans-ff: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@layer reset {
+
+    body {
+        margin: 0;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+        min-height: 100svh;
+        
+        font: 1.1rem var(--sans-ff);
+        color: var(--color-bg-1);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1;
+    }
+
+    p, a, span {
+        line-height: 1.5;
+    }
+
+    *, *::after, *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    input, select, textarea, datalist {
+        font: inherit;
+        line-height: inherit;
+        white-space: inherit;
+        appearance: none;
+    }
+
+    fieldset {
+        border: none;
+    }
+
+}
+
+@layer layout {
+
+    body {
+        display: grid;
+        place-items: center;
+    }
+    
+    main {
+        width: 70vw;
+        max-width: 1024px;
+        padding: 2.33em;
+        border-radius: 2.33em;
+        margin-block: 4.66em;
+    }
+
+}
+
+@layer components {
+
+    h1 {
+        font-weight: normal;
+        padding-bottom: 1em;
+    }
+
+    h2, .wrapper.slider h3 {
+        font-weight: normal;
+    }
+
+    legend {
+        margin-inline-start: 1em;
+
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            padding-bottom: 1.5em;
+        }
+    }
+
+    label h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.33em;
+    }
+
+    label P {
+        opacity: 0.8;
+    }
+    
+    .wrapper {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1em;
+        padding-inline: 1em;
+        transition:
+            inset cubic-bezier(0.1, 0, 0, 0.5) 0.67s,
+            color 0.33s linear,
+            background-color 0.33s linear,
+            border-color 0.33s linear,
+            box-shadow 0.67s cubic-bezier(0.1, 0, 0, 0.5),
+            opacity 0.33s linear;
+
+        &:not(:last-child, :only-of-type) {
+            padding-bottom: 1.33em;
+        }
+
+        *, *::after, *::before {
+            transition: inherit;
+        }
+
+        input {
+            box-shadow: 0 0 0 0 var(--color-bg-1);
+        }
+
+        input:focus-visible, input:hover {
+            outline: none;
+            box-shadow: 2.5px 2.5px 0 0 var(--color-bg-1)
+        }
+
+        &.slider { /* Sliders */
+            flex-direction: column;
+            align-items: unset;
+            justify-content: center;
+            gap: 0;
+
+            &:has(label:hover) {
+                input {
+                    filter: brightness(250%) saturate(50%);
+                }
+            }
+            
+            label {
+                padding-bottom: 0.67em;
+                
+                h3 {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.33em;
+                    font-weight: normal;
+
+                    &::before {
+                        content: '';
+                        display: inline-block;
+                        height: 1.5em;
+                        aspect-ratio: 1;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    &:is(label[for="alarm-slider"] &)::before {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(29, 10, 53)' viewBox='0 -960 960 960'%3E%3Cpath d='M521.91-456.48v-141.61q0-17.71-12.09-29.81Q497.72-640 480-640t-29.82 12.1q-12.09 12.1-12.09 29.81v156.85q0 9.2 3.36 17.53 3.35 8.34 10.07 15.06l109.13 109.13q11.72 11.72 29.56 11.6 17.83-.12 29.55-11.84 11.72-11.72 11.72-29.56 0-17.83-11.72-29.55l-97.85-97.61ZM480-71.87q-76.43 0-143.49-29.1-67.05-29.1-116.75-78.79-49.69-49.7-78.79-116.75-29.1-67.06-29.1-143.49t29.1-143.49q29.1-67.05 78.79-116.75 49.7-49.69 116.75-78.79 67.06-29.1 143.49-29.1t143.49 29.1q67.05 29.1 116.75 78.79 49.69 49.7 78.79 116.75 29.1 67.06 29.1 143.49t-29.1 143.49q-29.1 67.05-78.79 116.75-49.7 49.69-116.75 78.79-67.06 29.1-143.49 29.1ZM480-440ZM73.15-670.15q-11.72-11.72-11.6-29.44.12-17.71 11.84-29.43l117.83-117.83q11.71-11.72 29.31-11.72 17.6 0 29.32 11.72 11.72 11.72 11.72 29.44 0 17.71-11.72 29.43L132.02-670.15q-11.72 11.72-29.43 11.72-17.72 0-29.44-11.72Zm813.7 0q-11.72 11.72-29.44 11.72-17.71 0-29.43-11.72L710.15-787.98q-11.72-11.72-11.72-29.43 0-17.72 11.72-29.44 11.72-11.72 29.44-11.6 17.71.12 29.43 11.84l117.83 117.83q11.72 11.71 11.72 29.31 0 17.6-11.72 29.32ZM480-162.87q115.8 0 196.47-80.66Q757.13-324.2 757.13-440t-80.66-196.47Q595.8-717.13 480-717.13t-196.47 80.66Q202.87-555.8 202.87-440t80.66 196.47Q364.2-162.87 480-162.87Z'/%3E%3C/svg%3E");
+                    }
+
+                    &:is(label[for="ringtone-slider"] &)::before {
+                        background-image: var(
+                            --_icon,
+                            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(29, 10, 53)' viewBox='0 -960 960 960'%3E%3Cpath d='M197.37-191.87q-19.15 0-32.33-13.17-13.17-13.18-13.17-32.33t13.17-32.33q13.18-13.17 32.33-13.17H229v-271.87q0-86.11 51.32-153.6 51.31-67.49 134.18-88.2v-26.09q0-27.29 19.1-46.4 19.11-19.1 46.4-19.1t46.4 19.1q19.1 19.11 19.1 46.4v26.09q83.11 20.71 134.3 88.08Q731-641.09 731-554.74v271.87h31.63q19.15 0 32.33 13.17 13.17 13.18 13.17 32.33t-13.17 32.33q-13.18 13.17-32.33 13.17H197.37ZM480-498.8Zm.24 429.56q-34.18 0-58.53-24.27-24.34-24.27-24.34-58.36h165.5q0 34.2-24.27 58.41-24.28 24.22-58.36 24.22ZM320-282.87h320v-271.87q0-66-47-113t-113-47q-66 0-113 47t-47 113v271.87Z'/%3E%3C/svg%3E")
+                        );
+                    }
+
+                    &:is(label[for="media-slider"] &)::before {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(29, 10, 53)' viewBox='0 -960 960 960'%3E%3Cpath d='M397.37-110.91q-68.15 0-116.83-48.68-48.67-48.67-48.67-116.82 0-68.16 48.67-116.83 48.68-48.67 116.83-48.67 21.33 0 39.39 4.78 18.07 4.78 35.11 14.35v-380.81q0-19.15 13.17-32.32 13.18-13.18 32.33-13.18h165.5q19.15 0 32.33 13.18 13.17 13.17 13.17 32.32v80q0 19.16-13.17 32.33-13.18 13.17-32.33 13.17h-120v401.68q0 68.15-48.67 116.82-48.68 48.68-116.83 48.68Z'/%3E%3C/svg%3E");
+                    }
+
+                    &:is(label[for="vibration-slider"] &)::before {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(29, 10, 53)' viewBox='0 -960 960 960'%3E%3Cpath d='M30.18-595q12.82 0 21.32 8.62Q60-577.75 60-565v170q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63Q17-365 8.5-373.63 0-382.25 0-395v-170q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62Zm120-88q12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v346q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-346q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62Zm780 88q12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v170q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-170q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62Zm-120-88q12.82 0 21.32 8.62 8.5 8.63 8.5 21.38v346q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-346q0-12.75 8.68-21.38 8.67-8.62 21.5-8.62ZM308.37-120q-28.45 0-48.41-19.96Q240-159.92 240-188.37v-583.5q0-28.1 19.96-48.11Q279.92-840 308.37-840h343.5q28.1 0 48.11 20.02Q720-799.97 720-771.87v583.5q0 28.45-20.02 48.41Q679.97-120 651.87-120h-343.5Zm0-68.37h343.5v-583.5h-343.5v583.5Zm0 0v-583.5 583.5Z'/%3E%3C/svg%3E");                    }
+                }
+            }
+            
+            input[type="range"] {
+                --_value: 50%;
+
+                position: relative;
+                height: 36px;
+                transition: filter 0.1s linear, box-shadow 0.67s cubic-bezier(0.1, 0, 0, 0.5), opacity 0.33s linear /*, --_value 1s cubic-bezier(0.1, 0.5, 0, 1)*/;
+                background:
+                    linear-gradient(90deg, var(--color-bg-1) 0%, var(--_value), whitesmoke 0%)
+                    whitesmoke;
+                border: 0.2em var(--color-bg-1) solid;
+                border-radius: 100vw;
+                overflow: clip;
+
+                &::-webkit-slider-thumb {
+                    appearance: none;
+                    height: 100px;
+                    width: 24px;
+                }
+
+                &::-ms-track, &::-moz-range-track {
+                    width: 100%;
+                    cursor: pointer;
+
+                    color: transparent;
+                    border: none;
+                    background: none;
+                }
+            }
+        }
+
+        &.toggle { /* Toggles */
+
+            input[type="checkbox"] {
+                position: relative;
+                height: 24px;
+                aspect-ratio: 2;
+                padding: 0.8em;
+                background: whitesmoke;
+                border: 0.2em var(--color-bg-1) solid;
+                border-radius: 100vw;
+
+                &::after { /* Round thing */
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    background: var(--color-bg-1);
+                    inset: 5px 50% 5px 5px;
+                    border-radius: inherit;
+                }
+
+                &:hover:not(label:hover + *)::after {
+                    inset: 5px 33.33% 5px 5px;
+                    transition-duration: 0.33s ease-out;
+                }
+
+                &:checked {
+                    background: var(--color-bg-1);
+                    border-color: transparent;
+                }
+
+                &:checked::after {
+                    inset: 5px 5px 5px 50%;
+                    background: whitesmoke;
+                }
+
+                &:hover:not(label:hover + *):checked::after {
+                    inset: 5px 5px 5px 33.33%;
+                    transition-duration: 0.33s ease-out;
+                }
+            }
+
+        }
+
+        &.select {
+
+            .select-wrapper {
+                position: relative;
+                gap: 0.33em;
+                align-items: center;
+                    
+                select {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    text-align: right;
+                    padding-right: 1.83em;
+
+                    &:disabled {
+                        color: currentColor;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:focus-visible {
+                        outline: 1px black solid;
+                        font-weight: bolder;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(29, 10, 53)' viewBox='0 -960 960 960'%3E%3Cpath d='m480-213.5 111.85-111.85q10.43-10.19 24.87-10.19 14.43 0 24.63 10.3 10.19 10.29 10.19 24.81t-10.19 24.82L504.11-138.37q-5.52 5.46-11.62 7.95-6.09 2.49-12.65 2.49-6.56 0-12.5-2.49-5.95-2.49-11.45-7.95L318.65-275.61q-10.19-10.43-10.19-24.99 0-14.55 10.3-24.87 10.29-10.07 24.81-10.07t24.82 10.19L480-213.5Zm0-529.48L368.15-631.13q-10.43 10.2-24.87 10.2-14.43 0-24.63-10.3-10.19-10.3-10.19-24.82t10.19-24.82l137.24-137.48q5.52-5.24 11.61-7.83 6.1-2.6 12.65-2.6 6.56 0 12.52 2.6 5.96 2.59 11.44 7.83l137.24 137.48q10.19 10.43 10.19 24.99 0 14.55-10.3 24.87-10.29 10.08-24.87 9.96-14.57-.12-24.76-10.32L480-742.98Z'/%3E%3C/svg%3E");
+                    height: 1.5em;
+                    aspect-ratio: 1;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    translate: 0 -50%;
+                    pointer-events: none;
+                    display: block;
+                }
+            }
+
+        }
+
+        &:has(:disabled) { /* Disabled componants */
+            opacity: 0.5;
+            cursor: not-allowed;
+
+            label, input, select {
+                cursor: inherit !important;
+            }
+
+            &.slider input[type='range'] {
+                filter: none;
+                box-shadow: none;
+            }
+
+            *:focus,
+            *:focus-visible,
+            *:focus-within {
+                outline: none !important;
+            }
+
+        }
+
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background-color: var(--color-bg-1);
+        border-radius: 100vw;
+        margin-block: 1.33em;
+        margin-inline: auto;
+        width: calc(100% - 1em * 2);
+    }
+
+    footer {
+        text-align: center;
+        font-style: italic;
+    }
+
+}
+
+@layer additional {
+    
+    body  {
+        background:
+            conic-gradient(
+                from 90deg at -50% -50%,
+                var(--color-bg-1),
+                var(--color-bg-2)
+            ),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' fill='rgb(29, 10, 53)' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")
+            var(--color-bg-1);
+    }
+
+    main {
+        background-color: var(--color-popup-bg);
+    }
+
+}

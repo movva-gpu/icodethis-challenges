@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <main>
+
+        <h1>Sound settings</h1>
+
+        <form id="sound-settings" action="none">
+
+            <fieldset id="adjust-volume">
+
+                <legend>
+                    <h2>Adjust volume</h2>
+                </legend>
+
+                <div class="alarm-wrapper wrapper slider">
+                    <label for="alarm-slider">
+                        <h3>Alarms</h3>
+                    </label>
+                    <input type="range" name="alarm" id="alarm-slider" value="86">
+                </div>
+                <div class="ringtone-wrapper wrapper slider">
+                    <label for="ringtone-slider">
+                        <h3>Ringtone</h3>
+                    </label>
+                    <input type="range" name="ringtone" id="ringtone-slider" value="42">
+                </div>
+                <div class="media-wrapper wrapper slider">
+                    <label for="media-slider">
+                        <h3>Medias</h3>
+                    </label>
+                    <input type="range" name="media" id="media-slider" value="69">
+                </div>
+
+            </fieldset>
+
+            <hr>
+
+            <fieldset id="vibration">
+
+                <legend>
+                    <h2>Vibrations</h2>
+                </legend>
+
+                <div class="vibration-wrapper wrapper slider">
+                    <label for="vibration-slider">
+                        <h3>Vibration Strength</h3>
+                    </label>
+                    <input type="range" name="vibration" id="vibration-slider" value="100">
+                </div>
+
+                <div class="vibration-wrapper wrapper toggle">
+                    <label for="vibration-toggle">
+                        <h3>
+                            Vibrate
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black">
+                                <path
+                                    d="M35.79-600Q51-600 61.5-589.65T72-564v168q0 15.3-10.29 25.65Q51.42-360 36.21-360T10.5-370.35Q0-380.7 0-396v-168q0-15.3 10.29-25.65Q20.58-600 35.79-600Zm120-72q15.21 0 25.71 10.35T192-636v312q0 15.3-10.29 25.65Q171.42-288 156.21-288t-25.71-10.35Q120-308.7 120-324v-312q0-15.3 10.29-25.65Q140.58-672 155.79-672Zm768 72q15.21 0 25.71 10.35T960-564v168q0 15.3-10.29 25.65Q939.42-360 924.21-360t-25.71-10.35Q888-380.7 888-396v-168q0-15.3 10.29-25.65Q908.58-600 923.79-600Zm-120-72q15.21 0 25.71 10.35T840-636v312q0 15.3-10.29 25.65Q819.42-288 804.21-288t-25.71-10.35Q768-308.7 768-324v-312q0-15.3 10.29-25.65Q788.58-672 803.79-672ZM358-144q-49.7 0-83.85-34.15Q240-212.3 240-262v-436q0-49.7 34.15-83.85Q308.3-816 358-816h244q49.7 0 83.85 34.15Q720-747.7 720-698v436q0 49.7-34.15 83.85Q651.7-144 602-144H358Zm0-118h244v-436H358v436Zm0 0v-436 436Z" />
+                            </svg>
+                        </h3>
+                    </label>
+                    <input type="checkbox" name="vibration" id="vibration-toggle" checked>
+                </div>
+
+            </fieldset>
+
+            <hr>
+
+            <fieldset id="silent-mode">
+
+                <legend>
+                    <h2>Silent mode</h2>
+                </legend>
+
+                <div class="silent-wrapper wrapper toggle">
+                    <label for="silent-toggle">
+                        <h3>
+                            Silent mode
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black">
+                                <path
+                                    d="M662-182H217q-24.3 0-41.65-17.29Q158-216.58 158-240.79t17.35-41.71Q192.7-300 217-300h-23v-206q0-55 18.5-105t51.5-92l87 87q-19 23-29 51.75T312-506v206h231L94-749q-14-14-13.5-30.5T95-810q14-14 31-14t31 14l664 665q14 14 13.5 30.5T821-85q-14 14-31 14t-31-14l-97-97ZM551-782q98 17 156.5 96T766-506v40q0 30-18.25 44.5T707-407q-21.5 0-40.25-14.22T648-465v-41q0-70-49-119t-119-49l-9-2q-9-2-22.1 1.62Q424-667 398-676.5T362-710q-9-21-2-42t27.5-28q4.5-1 10-1.5t11.5-.5v-45q0-30 20.5-50.5T480-898q30 0 50.5 20.5T551-827v45ZM428-416Zm52.92 365Q451-51 427-65.88 403-80.75 403-108q0-12 8.5-19t21.5-7h95q13 0 21.5 7t8.5 19q0 26.25-24.08 41.62Q509.83-51 480.92-51ZM535-555Z" />
+                            </svg>
+                        </h3>
+                    </label>
+                    <input type="checkbox" name="silent" id="silent-toggle">
+                </div>
+                <div class="silent-duration-wrapper wrapper select">
+                    <label for="silent-duration-select">
+                        <h3>
+                            Silent mode duration
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black">
+                                <path
+                                    d="M531-518v-146q0-21.67-14.6-36.34Q501.8-715 480.21-715q-21.58 0-36.4 14.66Q429-685.67 429-664v166q0 13 4.5 23.07T446-457l117.85 117.85Q580-323 599.5-323.5 619-324 636-340t17-36.5q0-20.5-17.34-37.75L531-518ZM480-62q-87.38 0-163.18-32.58-75.79-32.59-132.72-89.52-56.93-56.93-89.52-132.87Q62-392.92 62-480.46t32.58-163.53q32.59-75.98 89.52-132.41 56.93-56.43 132.87-89.02Q392.92-898 480.46-898t163.53 32.82q76 32.83 132.21 89.1 56.22 56.27 89.01 132.33Q898-567.68 898-480q0 87.38-32.58 163.18-32.59 75.79-89.02 132.72-56.43 56.93-132.54 89.52Q567.74-62 480-62Zm0-418Zm.47 300q124.48 0 212.01-87.5Q780-355 780-480.48q0-125.47-87.51-212.5-87.52-87.02-212-87.02Q356-780 268-692.98q-88 87.03-88 212.5Q180-355 267.99-267.5 355.98-180 480.47-180Z" />
+                            </svg>
+                        </h3>
+                        <p>When will the silent mode be disabled</p>
+                    </label>
+                    <div class="select-wrapper">
+                        <select name="silent-duration-selecct" id="silent-duration-selecct" disabled>
+                            <option value="">Never</option>
+                            <option value="0.167">10 minutes</option>
+                            <option value="0.5">30 minutes</option>
+                            <option value="1">1 hour</option>
+                            <option value="2">2 hours</option>
+                            <option value="1">1 hours</option>
+                            <option value="2">2 hours</option>
+                            <option value="3">3 hours</option>
+                            <option value="4">4 hours</option>
+                            <option value="5">5 hours</option>
+                            <option value="6">6 hours</option>
+                            <option value="12">12 hours</option>
+                            <option value="24">24 hours</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="dnd-wrapper wrapper toggle">
+                    <label for="dnd-toggle">
+                        <h3>
+                            Do not disturb
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(29, 10, 53)" height="20px"
+                                viewBox="0 -960 960 960" width="20px" fill="black">
+                                <path
+                                    d="M347-421h266q24.3 0 41.65-17.29Q672-455.58 672-479.79t-17.35-41.71Q637.3-539 613-539H347q-24.3 0-41.65 17.29Q288-504.42 288-480.21t17.35 41.71Q322.7-421 347-421ZM480.28-62Q393-62 317.01-94.58q-75.98-32.59-132.91-89.52-56.93-56.93-89.52-132.87Q62-392.92 62-480.46t32.58-163.03q32.59-75.48 89.52-132.41 56.93-56.93 132.87-89.52Q392.92-898 480.46-898t163.03 32.58q75.48 32.59 132.41 89.52 56.93 56.93 89.52 132.64Q898-567.55 898-480.28q0 87.28-32.58 163.27-32.59 75.98-89.52 132.91-56.93 56.93-132.64 89.52Q567.55-62 480.28-62ZM480-180q126 0 213-87t87-213q0-126-87-213t-213-87q-126 0-213 87t-87 213q0 126 87 213t213 87Zm0-300Z" />
+                            </svg>
+                        </h3>
+                        <p>Disables both notifications and ringtone sounds</p>
+                    </label>
+                    <input type="checkbox" name="dnd" id="dnd-toggle">
+                </div>
+
+            </fieldset>
+
+            <hr>
+
+            <footer>Made with all my love 🩷🏳️‍⚧️</footer>
+
+        </form>
+
+    </main>
+</body>
+
+</html>
